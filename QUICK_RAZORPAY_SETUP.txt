@@ -1,0 +1,43 @@
+═══════════════════════════════════════════════════════════════
+  QUICK RAZORPAY SETUP - 5 MINUTES
+═══════════════════════════════════════════════════════════════
+
+STEP 1: Sign Up (2 min)
+  → Go to: https://razorpay.com/signup
+  → Use any email
+  → Verify email
+
+STEP 2: Get Keys (1 min)
+  → Login: https://dashboard.razorpay.com
+  → Click: Settings (⚙️ top right)
+  → Click: API Keys
+  → Find: Test Mode section
+  → Click: Generate Test Key (if needed)
+  → Copy: Key ID (rzp_test_xxxxx)
+  → Click: Reveal (for Key Secret)
+  → Copy: Key Secret (long string)
+
+STEP 3: Add to Project (30 sec)
+  → Open: backend/.env
+  → Add these lines:
+    
+    RAZORPAY_KEY_ID=rzp_test_xxxxxxxxxxxxx
+    RAZORPAY_KEY_SECRET=xxxxxxxxxxxxxxxxxxxxx
+
+  → Save file
+
+STEP 4: Restart Backend (10 sec)
+  → cd backend
+  → npm start
+
+═══════════════════════════════════════════════════════════════
+
+TEST IT:
+  → Add products to cart
+  → Checkout
+  → Click "Pay"
+  → Razorpay popup opens!
+  → Use test card: 4111 1111 1111 1111
+
+═══════════════════════════════════════════════════════════════
+
