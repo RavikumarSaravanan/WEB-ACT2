@@ -1,0 +1,128 @@
+.checkout-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-title {
+  font-size: 24px;
+  color: #212121;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #212121;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  min-height: 100px;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.order-summary {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.order-summary h3 {
+  font-size: 18px;
+  color: #212121;
+  margin-bottom: 15px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.price-row.total {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.delivery-info {
+  margin: 15px 0;
+  padding: 10px;
+  background: #e8f5e9;
+  border-radius: 4px;
+  color: #388e3c;
+  font-size: 14px;
+}
+
+.delivery-info.charged {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.submit-button,
+.cancel-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button {
+  background: #2874f0;
+  color: white;
+  flex: 1;
+}
+
+.submit-button:hover {
+  background: #1c5ac0;
+}
+
+.submit-button:disabled {
+  background: #b0b0b0;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  background: #fff;
+  color: #2874f0;
+  border: 1px solid #2874f0;
+}
+
+.cancel-button:hover {
+  background: #f5f5f5;
+}
