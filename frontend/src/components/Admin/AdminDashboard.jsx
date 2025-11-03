@@ -12,7 +12,7 @@ const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('dashboard'); // dashboard, products, customers, orders
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
