@@ -1,0 +1,47 @@
+Product Seed Script - Quick Help
+
+Manual process (runs only when you execute it):
+
+- The seed script does NOT run automatically. Run it manually when you want to add or clean products.
+- Edit the `products` array in `backend/scripts/addProducts.js` to add or change product entries.
+
+How duplicates are handled:
+
+- Before adding a product, the script checks whether a product with the same `name` exists.
+- If duplicates exist, the script keeps the newest entry and removes older duplicates.
+- If a product already exists (one entry), the script skips adding it.
+
+Commands (PowerShell) — run from the `backend` folder:
+
+```powershell
+# Run the seed script (reads backend/.env for DB_TYPE and MONGODB_URI)
+node scripts/addProducts.js
+
+# Check current products in the database (uses Node, not mongosh)
+node scripts/checkProducts.js
+```
+
+Simple usage steps:
+
+1. Open `backend/scripts/addProducts.js` and edit the `products` array to include the products you want.
+2. Ensure your `backend/.env` sets the right DB (e.g., `DB_TYPE=mongodb` and `MONGODB_URI=...`).
+3. From a terminal in `backend`, run `node scripts/addProducts.js`.
+4. After it finishes, run `node scripts/checkProducts.js` to verify the entries.
+
+Notes & safety:
+
+- The script will NOT create duplicates; it skips existing names and removes older duplicates.
+- If you want to force a full reset, you can remove entries manually from the DB (or modify the script to drop the collection) — do this only if you understand the consequences.
+- If you don't have `mongosh` installed, use `node scripts/checkProducts.js` to inspect records.
+
+Need more? If you'd like I can:
+- Add a `--force` flag to always replace matching products
+- Add a separate `reset-products` script to wipe and reseed
+- Convert the product list to a JSON file so non-developers can edit it safely
+
+--- End of help
+# Run the seed script (reads backend/.env for DB_TYPE and MONGODB_URI)
+node scripts/addProducts.js
+
+# Check current products in the database (uses Node, not mongosh)
+node scripts/checkProducts.js

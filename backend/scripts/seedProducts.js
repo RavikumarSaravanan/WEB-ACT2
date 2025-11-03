@@ -13,7 +13,7 @@ const sampleProducts = [
     price: 450.00,
     stock: 50,
     category: 'Food',
-    image_path: null
+    image_path: "../img/rice.webp"
   },
   {
     name: 'Wheat Flour 2kg',

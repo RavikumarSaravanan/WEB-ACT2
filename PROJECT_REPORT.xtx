@@ -1,0 +1,83 @@
+Project Report: local-store-ecom
+
+Purpose
+This is a small e-commerce starter project named "local-store-ecom". It demonstrates a simple online store with a React frontend and a Node.js backend. It supports storing products, customers, and orders using MongoDB (primary) or MySQL (optional).
+
+What the project does (simple)
+- Shows a product catalog on the frontend.
+- Provides backend API endpoints to list, create, update, and delete products and manage orders.
+- Includes a manual seed script to populate the database with example products.
+
+Technology stack
+- Backend: Node.js (ES modules), Express
+- Database: MongoDB (preferred) or MySQL
+- ORM/driver: Mongoose for MongoDB, mysql2 for MySQL
+- Frontend: React + Vite
+- Config: dotenv
+
+Important files and folders
+- backend/server.js — main Express server
+- backend/models/mongodb/productModel.js — MongoDB product model and CRUD functions
+- backend/scripts/addProducts.js — seed script (manual) to add example products
+- backend/scripts/checkProducts.js — script to list products from DB
+- backend/scripts/sample help.txt — short instructions for seeding
+- frontend/ — React/Vite app with components (ProductList, Cart, Checkout, Admin pages)
+
+How product seeding works (simple explanation)
+- The seed script is manual. Run it only when you want to add or clean product data.
+- Edit the `products` array in `backend/scripts/addProducts.js` to add or change sample products.
+- Run `node scripts/addProducts.js` from the `backend` folder to process products.
+- The script reads DB settings from `backend/.env`:
+  - If `DB_TYPE=mongodb`, it writes to MongoDB using `MONGODB_URI`.
+  - Otherwise it attempts MySQL using DB_HOST/DB_USER/DB_PASSWORD/DB_NAME.
+
+Duplicate handling
+- Before inserting, the script checks if a product with the same `name` exists.
+- If duplicates are found, it keeps the newest entry and removes older copies.
+- If a product already exists (single entry), the script skips adding a new one.
+- New products are added only when no matching name exists.
+
+Quick commands (PowerShell, run from project folders)
+1) Backend install and start (from `backend`):
+   cd C:\Users\welcome\Desktop\WEB-ACT2\backend
+   npm install
+   # start server or run dev mode
+   node server.js
+   # or
+   npm run dev
+
+2) Frontend install and start (from `frontend`):
+   cd C:\Users\welcome\Desktop\WEB-ACT2\frontend
+   npm install
+   npm run dev
+   # open URL shown by Vite (usually http://localhost:5173)
+
+3) Seed products and verify (from `backend`):
+   node scripts/addProducts.js
+   node scripts/checkProducts.js
+
+Troubleshooting tips
+- MongoDB not running: On Windows, check `Get-Service -Name MongoDB` and ensure the service is Running.
+- Wrong .env: Ensure `backend/.env` contains valid DB configuration (DB_TYPE, MONGODB_URI, etc.). The script has a simple fallback parser but use a clean .env.
+- Missing createProduct: If the product model lacks the expected export, the script will log an error.
+- No mongosh installed: Use `node scripts/checkProducts.js` to inspect data.
+
+Simple checklist for an assignment
+- Install Node.js and Git
+- Start MongoDB locally or use a cloud URI
+- Run `npm install` in backend and frontend
+- Start the backend and frontend
+- Edit `backend/scripts/addProducts.js` with sample products
+- Run `node scripts/addProducts.js` and `node scripts/checkProducts.js`
+- Take screenshots of the running UI and the DB entries for submission
+
+Possible improvements (optional suggestions)
+- Add a `--force` flag to the seed script to replace matching products.
+- Move product data to a `products.json` file so non-developers can easily edit it.
+- Provide a single `setup.sh`/PowerShell script to automate setup.
+- Add unit tests for the product model and seed script behavior.
+
+Contact / Next steps
+If you want this report in a different format (plain .txt, README.md, or PDF), or want me to add the `--force` option or move products to `products.json`, tell me which option and I will implement it.
+
+End of report.
